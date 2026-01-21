@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смотри и Слушай 2.0 — Выпуск #3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            color: #e0e7ff;
+            margin: 0;
+            padding: 30px 15px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(20, 30, 60, 0.85);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            border: 1px solid #3b82f6;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.6em;
+            margin: 0 0 10px;
+            color: #60a5fa;
+            text-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #93c5fd;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+        th {
+            background: linear-gradient(to bottom, #2563eb, #1d4ed8);
+            color: white;
+            padding: 14px;
+            font-size: 1.05em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        td {
+            padding: 14px 12px;
+            background: rgba(30, 58, 138, 0.5);
+            border-left: 5px solid transparent;
+            transition: all 0.25s ease;
+        }
+        tr:hover td {
+            background: rgba(59, 130, 246, 0.4);
+            border-left: 5px solid #60a5fa;
+            transform: translateX(6px);
+        }
+        .position {
+            text-align: center;
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #93c5fd;
+            width: 70px;
+        }
+        .movement {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .up { color: #34d399; }
+        .down { color: #f87171; }
+        .stay { color: #fbbf24; }
+        .new { color: #34d399; font-weight: bold; }
+        .cover {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bfdbfe;
+            font-size: 0.9em;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+        }
+        .img-cover {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+        }
+        .track {
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .artist {
+            color: #bfdbfe;
+            font-size: 0.95em;
+        }
+        .weeks, .points {
+            text-align: center;
+            color: #93c5fd;
+        }
+        .longest {
+            color: #fcd34d;
+            font-weight: bold;
+        }
+        .vote-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .vote-btn:hover {
+            background: #60a5fa;
+            transform: scale(1.05);
+        }
+        .vote-btn.voted {
+            background: #1e40af;
+            cursor: default;
+        }
+        .vote-count {
+            margin-left: 8px;
+            color: #bfdbfe;
+            font-weight: bold;
+        }
+        .novelties {
+            margin-top: 60px;
+            padding: 25px;
+            b
+
+
+ackground: rgba(30, 58, 138, 0.6);
+            border-radius: 16px;
+            border: 1px dashed #60a5fa;
+        }
+        .novelties h2 {
+            text-align: center;
+            color: #93c5fd;
+            margin-bottom: 20px;
+        }
+        .novelties ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+        }
+        .novelties li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(147, 197, 253, 0.2);
+        }
+        .novelties li:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Смотри и Слушай 2.0</h1>
+        <div class="subtitle">Выпуск #3 — 24 января 2025</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Поз</th>
+                    <th></th>
+                    <th>Трек</th>
+                    <th>Движение</th>
+                    <th>Недели</th>
+                    <th>Очки</th>
+                    <th>Голос</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="position">1</td>
+                    <td><div class="cover">Cover</div></td>
+                    <td><div class="track">Taylor Swift</div><div class="artist">The Fate of Ophelia</div></td>
+                    <td class="movement up">+3</td>
+                    <td class="weeks">8</td>
+                    <td class="points">243</td>
+                    <td><button class="vote-btn" onclick="vote(this, 1)">Голосовать <span class="vote-count">(0)</span></button></td>
+                </tr>
+                <tr>
+                    <td class="position">2</td>
+                    <td><div class="cover">Cover</div></td>
+                    <td><div class="track">John Summit & Inez</div><div class="artist">crystallized</div></td>
+                    <td class="movement down">-1</td>
+                    <td class="weeks">13</td>
+                    <td class="points">440</td>
+                    <td><button class="vote-btn" onclick="vote(this, 2)">Голосовать <span class="vote-count">(0)</span></button></td>
+                </tr>
+                <tr>
+                    <td class="position">3</td>
+                    <td><div class="cover">Cover</div></td>
+                    <td><div class="track">Ray Dalton</div><div class="artist">Blood Running</div></td>
+                    <td class="movement up">+7</td>
+                    <td class="weeks">9</td>
+                    <td class="points">219</td>
+                    <td><button class="vote-btn" onclick="vote(this, 3)">Голосовать <span class="vote-count">(0)</span></button></td>
+                </tr>
+                <!-- Остальные строки чарта аналогично (для краткости показаны только первые 3 + шаблон) -->
+                <tr>
+                    <td class="position">4</td>
+                    <td><div class="cover">Cover</div></td>
+                    <td><div class="track">HAVEN. feat. Kaitlin Aragon</div><div class="artist">I Run</div></td>
+                    <td class="movement down">-2</td>
+                    <td class="weeks">7</td>
+                    <td class="points">224</td>
+                    <td><button class="vote-btn" onclick="vote(this, 4)">Голосовать <span class="vote-count">(0)</span></button></td>
+                </tr>
+                <!-- ... добавь остальные 5–40 по тому же шаблону ... -->
+                <tr>
+                    <td class="position">36</td>
+                    <td><div class="cover">Cover</div></td>
+                    <td><div class="track">Damiano David</div><div class="artist">Next Summer</div><span class="longest"> Longest Chart Sitter</span></td>
+                    <td class="movement down">-4</td>
+                    <td class="weeks">38</td>
+                    <td class="points">710</td>
+                    <td><button class="vote-btn" onclick="vote(this, 36)">Голосовать <span class="vote-count">(0)</span></button></td>
+                </t
+
+
+r>
+                <!-- Примеры выбывших (с ❌) можно оставить или закомментировать -->
+            </tbody>
+        </table>
+
+        <div class="novelties">
+            <h2>Новинки</h2>
+            <ul>
+                <li>1. Barton — I Think We're Alone Now</li>
+                <li>2. Vintage Culture & Gabss — Lost (DECRO)</li>
+                <li>3. BROMANCE — You Can Dance (DECRO)</li>
+                <li>4. Matoma & Coleman Hell — World In Your Eyes (DECRO)</li>
+                <li>5. Alok & DENNIS — Mimosa (Now and Forever) (DECRO)</li>
+                <li>6. Robin Schulz & Sigala — AM to PM (feat. Zoe Wees)</li>
+                <li>7. Cash Cash & Kyle — Honest (DECRO)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function vote(button, pos) {
+            if (button.classList.contains('voted')) return;
+            
+            let countEl = button.querySelector('.vote-count');
+            let current = parseInt(countEl.textContent.slice(1, -1)) || 0;
+            countEl.textContent = `(${current + 1})`;
+            
+            button.classList.add('voted');
+            button.textContent = 'Голос учтён!';
+            
+            // Здесь можно добавить localStorage или отправку на сервер
+            console.log(`Голос за позицию ${pos}`);
+        }
+    </script>
+
+</body>
+</html>
